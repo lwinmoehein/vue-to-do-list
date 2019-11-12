@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import AddToDo from './components/AddToDo'
 import Todos from './components/ToDo'
 import Header from './components/layouts/header'
@@ -21,26 +22,7 @@ export default {
   data(){
     return {
       todos:[
-        {
-          id:1,
-          title:"todo one",
-          completed:true,
-        },
-        {
-          id:2,
-          title:"todo two",
-          completed:false,
-        },
-        { 
-          id:3,
-          title:"todo three",
-          completed:false,
-        },
-        {
-          id:4,
-          title:"todo four",
-          completed:true,
-        },
+       
       ]
     }
   },
@@ -52,6 +34,12 @@ export default {
       this.todos=[...this.todos,newToDo];
     }
   }
+  ,
+   created(){
+        axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
+        .then(res=>this.todos=res.data);
+    }
+
 }
 </script>
 
