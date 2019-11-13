@@ -1,4 +1,6 @@
 # todolist
+A simple todolist app that requests todos from jsonplaceholder site.
+Tutorial from Brad Traversy Media Channel
 deployed link https://purevue-feea8.web.app
 ## Project setup
 ```
